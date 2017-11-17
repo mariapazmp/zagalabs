@@ -5,7 +5,7 @@ body {
   color: white;
 }
 
-.zaga {
+/*.zaga {
   background-image: url('../img/bg-zero.jpg');
   background-size: cover;
   position: fixed;
@@ -13,4 +13,351 @@ body {
   bottom: 0px;
   left: 0px;
   right: 0px;
+}*/
+
+
+/* ---------
+
+  Code Challenge for Zagalabs by
+  María Paz Muñoz
+  2017
+
+--------- */
+
+
+/* Variables */
+
+$main-color : #3e3e3e;
+$gray : #eee;
+$t-black : rgba(0, 0, 0, 0.5);
+
+
+/* Reset style */
+  html {min-height: 100%;}
+  body {position: relative; }
+  html, body, ul, li {margin: 0; padding: 0}
+  a {text-decoration: none;}
+  fieldset { border: none; }
+  .clear { clear: both; display: block; }
+  a { text-decoration: none; color: #000; }
+  a:hover { text-decoration: none; }
+  li, ul, body, div, span, p, h1, h2, h3, input { margin: 0px; padding: 0px; }
+  ul { list-style-type: none; }
+  img { border: none; }
+  body, html { font-size: 14px; color: #231f20; }
+  button {background-color: transparent; border: none;}
+
+
+/* General Styles */
+
+a:hover {
+  transition: background-color 0.6s, color 0.6s;
+  -o-transition: background-color 0.6s, color 0.6s;
+  -moz-transition: background-color 0.6s, color 0.6s;
+  -webkit-transition: background-color 0.6s, color 0.6s;
+}
+
+.submenu {
+  padding: 12px 0;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 100;
+  
+  li {
+    float: none !important;
+  }
+  
+  a {
+    padding: 15.5px 24px!important;
+    display: block!important;
+    clear: both!important;
+    font: 16px/1 Galaxie!important;
+    color: #777!important;
+  } 
+  a:hover {
+    background-color: $gray !important;
+    color: $main-color !important
+  }     
+      
+}
+  
+
+#background {
+  display: none;
+  background-color: $t-black;
+  z-index: 2; position: absolute;
+  width: 100%;
+  height: 100%
+}
+
+.appear {display: block}
+
+.active {background-color: #FFF; color: $main-color!important;}
+
+.closebtn { 
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px !important;
+  margin-left: 50px;
+}
+
+
+/* Index Styles */
+
+#content {
+  transition: margin-left .5s;
+  width: 100%
+}
+
+#header {
+  padding: 0 24px;
+  background-color: $main-color;
+  
+  .logo {
+    padding: 24px 0;
+    margin-right: 48px;
+    float: left;
+    
+    img {max-width: 240px;}
+  }
+
+  #nav {  
+    z-index:2;
+    
+    li{ 
+      float: left;
+      display: block;
+      position:relative;
+    }
+    
+    a {
+      float: left;
+      padding: 24px 24px 25px 24px;
+      color: #FFF; font-size: 21px;
+      font-family: huge;
+      display: block;     
+    }
+    
+    a:hover {
+        background-color: #FFF;
+        color:$main-color;
+        text-decoration: none;
+    }
+  } 
+}
+  
+  
+#index {
+  .main-slide {
+    position: relative;
+    max-height: 640px; 
+
+    .image img {width: 100%; max-height: 640px; }
+
+    .text {
+      position: absolute;
+      width: 100%; 
+      height: 100%; 
+      top: 0; 
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font: 120px/1.3 huge;
+      padding-top: 10%; 
+      display: block; 
+      width: 53%;
+      letter-spacing: -0.06em; 
+      margin: 0 auto; 
+      color: #FFF; 
+      text-align: center; 
+    } 
+  }
+  
+  .article {
+    margin-top: 60px;
+    
+    .text {
+      font: 24px/1.5 Galaxie;
+      margin: 0 auto;
+      width: 968px;
+    }
+  }
+  
+  .h1-xs{
+    font: 44px/1 huge;
+    display: none;
+    margin: 50px 0px 39px;
+    padding: 0 24px;
+  }
+} 
+
+
+
+#footer {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #e7e7e7;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  
+  h6 {
+    margin: 0 0 10px 0;
+    font-weight: normal;
+    color: #939393;
+    font-size: 14px;
+  }
+  
+  .sign {
+    line-height: 0.5;
+    width: 92px;
+    margin: 0 auto 10px auto;
+    font-family: 'wolf';
+    color: #414041;
+    font-size: 50px;
+    
+    a {color:#787878}
+  }
+  
+  .date {
+    color: #939393;
+    font-size: 14px;
+  }
+}
+  
+
+.sidenav { 
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  a {
+    padding: 10px 10px 10px 24px;
+    color: #1a1a1a;
+    font-size: 21px;
+    font-family: huge;
+    display: block;
+  }
+
+  a:hover {background-color: $gray}  
+  
+  .top{
+    background-color: $main-color;
+  }
+  
+  .logo {
+    height: 60px;   
+    img {
+      max-width: 220px;
+      padding: 7px 20px;
+    }
+  }
+  
+  .menuxs {
+    padding-top: 12px;
+    background-color: #FFF;
+  }
+
+}
+
+  
+
+/*Desktop Nav menu 
+  The behavior of the Desktop Navigation menu were developed with the following CSS rules
+*/
+
+#nav {
+  ul {
+    left:-9999px; position:absolute; top:76px; width:auto;
+  }
+  
+  > li > a {overflow:hidden;}
+}
+  
+ 
+
+
+  #nav li a.menu-a { padding-right:15px;}
+  #nav li a.menu-a:focus {background-color: #FFF; color: $main-color!important;}
+  #nav ul li { margin:0;}
+  #nav li .dd {width: 140%}
+  #nav li .dd li a { width: 100%; box-sizing: border-box;}
+
+/*Following line makes appear the submenu options*/
+  #nav li a:focus { outline-width:0;}
+  #nav li a:active + ul.dd, #nav li a:focus + ul.dd, #nav li ul.dd:hover {
+      left:0; 
+    }
+
+
+/*Mobile Nav menu */
+#navxs {position: relative;}
+  #navxs,#navxs ul { list-style:none; margin:0;  }
+  #navxs ul { left:-9999px; position:relative; height: 0; top:0px; width:auto;}
+  #navxs > li > a {overflow:hidden;}
+
+  #navxs li a.menu-a { padding-right:15px;}
+  #navxs li a.menu-a:focus {background-color: #FFF; color: $main-color!important;}
+  #navxs a.menu-a:focus .dd {height: 100%}
+
+  #navxs ul li { margin:0;}
+  #navxs li .dd {width: 140%}
+  #navxs li .dd li a { width: 100%; box-sizing: border-box;}
+
+
+  #navxs li a:focus { outline-width:0;}
+
+  /*popups*/
+  #navxs li a:active + ul.dd, #navxs li a:focus + ul.dd, #navxs li ul.dd:hover {
+      left:0; height: 100%; }
+
+
+#ic-toggle {
+  background-image: url('../img/toggle-open.svg'); 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  height: 20px; 
+  width: 20px; 
+  display: none; 
+  cursor: pointer; 
+  float: left; 
+  padding: 20px 24px; 
+  height: 20px;
+}
+
+
+
+
+/*--------- Media queries ---------*/
+
+
+@media (max-width: 1200px){ /* Large devices */
+  #index .main-slide .text h1 {width: 80%}
+}
+
+
+@media (max-width: 968px){
+  #index .article .text {width: 92%;padding-left: 4%;padding-right: 4%;}
+  #index .main-slide .text h1 {font: 12vmin/1 huge;}
+
+}
+
+@media (max-width: 768px){ /*xs devices - Mobile */
+  #header {padding-left: 0}
+  #header .logo {display: none;}
+  #header .menu {display: none;}
+  #header #ic-toggle {display: block;}
+  #index .main-slide .text {display: none;}
+  #index .main-slide .text h1 {display: none;}
+  #index .article .h1-xs{display: block;}
+  #index .article {margin-top: 0}
+  #index .article .text {font: 14px/2 Galaxie;}
+
+
 }
