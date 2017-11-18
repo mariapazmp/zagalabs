@@ -2,18 +2,13 @@
 import '../scss/styles.scss'
 
 (function(){
-  console.log('hello world zagalabs app!!!');
-})();
-
-
 
 document.onreadystatechange = () => {
-
-
   if (document.readyState === 'complete') {
 
   	document.getElementById("background").onclick = hideBackground;
-	document.getElementById("ic-toggle").onclick = openNav; 	    
+	document.getElementById("ic-toggle").onclick = openNav; 
+	document.querySelector('.link-interest').onclick = smothScroll;
 
 // Desktop and mobile navigation events
 
@@ -51,7 +46,11 @@ document.onreadystatechange = () => {
 		}
 	)(i); /* Close the loop */ 
 
-
+function smothScroll() {
+	document.querySelector('.interest').scrollIntoView({ 
+	  behavior: 'smooth' 
+	});
+}
 
 function hideBackground() {		
 	if (window.innerWidth < 768) {
@@ -93,7 +92,6 @@ function hideSidenav(){
 
 } /* Close onready */
   
-
-
+})();
 
 
