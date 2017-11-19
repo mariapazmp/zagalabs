@@ -23,15 +23,8 @@
 
 $main-color : #3e3e3e;
 $gray : #eee;
-
-
 $t-black : rgba(0, 0, 0, 0.5);
 $font-main: 'Open Sans', sans-serif;
-
-$blue: #2c87ce;
-$magenta: #ce2c52;
-$mint: #8ae6cf;
-$mint-trans: rgba(138, 239, 207, 0.8);
 
 
 /*----- Reset style -----*/
@@ -62,7 +55,8 @@ a:hover {
 #background {
   display: none;
   background-color: $t-black;
-  z-index: 2; position: absolute;
+  z-index: 2; 
+  position: absolute;
   width: 100%;
   height: 100%
 }
@@ -72,14 +66,6 @@ a:hover {
 .active {
   background-color: #FFF; 
   color: $main-color;
-}
-
-.closebtn { 
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px !important;
-  margin-left: 50px;
 }
 
 .container {
@@ -149,6 +135,23 @@ h2 {
     color: white;
 }
 
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+.fade-in-element {
+  animation: fade-in 1.4s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+nav li {
+  cursor: pointer;
+}
+
 /*----- Index Styles -----*/
 
 #content {
@@ -168,11 +171,7 @@ h2 {
       float: left;
       display: block;
       position:relative;
-    }
-    
-    a {
       color: white;
-      float: left;
       font-size: 0.8rem;
       font-weight: 300;
       letter-spacing: 3px;
@@ -180,7 +179,7 @@ h2 {
       text-transform: uppercase;
     }
     
-    a:hover {
+    li:hover {
         background-color: #FFF;
         color:$main-color;
         text-decoration: none;
@@ -191,7 +190,7 @@ h2 {
 #index {
   color: #231f20;
 
-  .events {background-image: url('../img/events.jpg');}
+  .events-content {background-image: url('../img/events.jpg');}
 
   .main-slide {
     color: white;
@@ -214,6 +213,10 @@ h2 {
       background-repeat: no-repeat;
       background-position: right bottom;
       background-size: 400px;
+
+      @media (max-width: 991px) {
+        background-image: none;
+      }
     }
 
     h1 {
@@ -241,7 +244,7 @@ h2 {
     }
   }
 
-  .events {
+  .events-content {
     ul {
       width: 80%;
       margin: 0 auto;
@@ -275,22 +278,26 @@ h2 {
     }
   }
 
-  .news i {
+  .news-content i {
     text-align: center;
     font-size: 3vw;
     display: block;
     margin-bottom: 15px;
     color: #979797;
+
+    @media (max-width: 991px) {
+      font-size: 3rem;
+    }
   }
 
-  .interest {
+  .interest-content{
     background-image: url('../img/interest.jpg');
 
     h2 {
       font-weight: 700;
     }
   }
-  .comming-soon {
+  .comming-soon-content {
     font-size: 0;
     text-align: left;
     
@@ -368,10 +375,20 @@ h2 {
           color: $gray;
         }
       }
+
+      @media (max-width: 991px) {
+        width: 50%
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
+
+
   }
 
-  .contacto {
+  .contact-content {
     background-image: url('../img/contacto.jpg');
     background-position: center top;
     padding-bottom: 130px;
@@ -379,6 +396,7 @@ h2 {
 
 } 
 
+/*----- Mobile Nav menu -----*/
 .sidenav { 
   height: 100%;
   width: 0;
@@ -389,101 +407,67 @@ h2 {
   overflow-x: hidden;
   transition: 0.5s;
 
-  a {
+  li {
     padding: 10px 10px 10px 24px;
     color: #1a1a1a;
     font-size: 21px;
-    font-family: huge;
     display: block;
   }
 
-  a:hover {background-color: $gray}  
-  
-  .top{
-    background-color: $main-color;
-  }
+  li:hover {background-color: $gray}  
   
   .logo {
-    height: 60px;   
+    height: 60px;
+    background-color: $main-color;   
     img {
       max-width: 220px;
       padding: 7px 20px;
     }
   }
-  
-  .menuxs {
-    padding-top: 12px;
-    background-color: #FFF;
-  }
-
 }
 
-  
+#navxs {
+  padding-top: 12px;
+  position: relative;
 
-/*Desktop Nav menu 
-  The behavior of the Desktop Navigation menu were developed with the following CSS rules
-*/
-
-#nav {
   ul {
-    left:-9999px; position:absolute; top:76px; width:auto;
+    left:-9999px; 
+    position:relative; 
+    height: 0; 
+    top: 0px; 
+    width: auto;
   }
-  
-  > li > a {overflow:hidden;}
+
+  & > li {
+    overflow:hidden;
+  }
+
+  li {
+    margin:0;
+  }
+  li:focus { 
+    outline-width:0;
+  }
 }
-  
- 
-
-
-  #nav li a.menu-a { padding-right:15px;}
-  #nav li a.menu-a:focus {background-color: #FFF; color: $main-color!important;}
-  #nav ul li { margin:0;}
-  #nav li .dd {width: 140%}
-  #nav li .dd li a { width: 100%; box-sizing: border-box;}
-
-/*Following line makes appear the submenu options*/
-  #nav li a:focus { outline-width:0;}
-  #nav li a:active + ul.dd, #nav li a:focus + ul.dd, #nav li ul.dd:hover {
-      left:0; 
-    }
-
-
-/*Mobile Nav menu */
-#navxs {position: relative;}
-  #navxs,#navxs ul { list-style:none; margin:0;  }
-  #navxs ul { left:-9999px; position:relative; height: 0; top:0px; width:auto;}
-  #navxs > li > a {overflow:hidden;}
-
-  #navxs li a.menu-a { padding-right:15px;}
-  #navxs li a.menu-a:focus {background-color: #FFF; color: $main-color!important;}
-  #navxs a.menu-a:focus .dd {height: 100%}
-
-  #navxs ul li { margin:0;}
-  #navxs li .dd {width: 140%}
-  #navxs li .dd li a { width: 100%; box-sizing: border-box;}
-
-
-  #navxs li a:focus { outline-width:0;}
-
-  /*popups*/
-  #navxs li a:active + ul.dd, #navxs li a:focus + ul.dd, #navxs li ul.dd:hover {
-      left:0; height: 100%; }
 
 
 #ic-toggle {
-  background-image: url('../img/toggle-open.svg'); 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-  height: 20px; 
-  width: 20px; 
-  display: none; 
-  cursor: pointer; 
-  float: left; 
-  padding: 20px 24px; 
-  height: 20px;
+  i {
+    z-index: 10; 
+    padding: 10px;
+    font-size: 2.4rem;
+    display: none;
+  }
+  .fa-times {
+    display: none;
+  }
+
+  .fa-bars {    
+    @media (max-width: 767px){
+      display: inline-block;
+    }
+  }
 }
-
-
 
 
 /*--------- Media queries ---------*/

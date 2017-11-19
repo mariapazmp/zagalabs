@@ -21,12 +21,12 @@
                 <div class="logo"><img id="logoxs" src="img/logo-white.png"></div>       
             </div>
             <div class="menuxs">
-                <ul id="navxs">
-                    <li><a href="#/work">Eventos</a></li>
-                    <li><a href="#/about">Noticias</a></li>
-                    <li><a href="#/work">Interés</a></li>
-                    <li><a href="#/about">Próximos Estrenos</a></li>
-                    <li><a href="#/work">Contáctenos</a></li>
+                <ul id="navxs" class="menu-xs">
+                    <li class="events">Eventos</li>
+                    <li class="news">Noticias</li>
+                    <li class="interest">Interés</li>
+                    <li class="comming-soon">Próximos Estrenos</li>
+                    <li class="contact">Contáctenos</li>
                 </ul>
             </div>
         </nav>
@@ -34,21 +34,23 @@
         <div id="content">
             <nav id="header">
                 <div class="container">
-                    <!--div class="logo"><a href="#"><img src="img/logo-white.png"></a></div-->
-                    <div class="menu">
-                        <ul id="nav">
-                            <li><a href="#/work" tabindex="1">Eventos</a></li>
-                            <li><a href="#/about" tabindex="2">Noticias</a></li>
-                            <li><a class="link-interest" href="#/work" tabindex="3">Interés</a></li>
-                            <li><a href="#/about" tabindex="4">Próximos Estrenos</a></li>
-                            <li><a href="#/work" tabindex="5">Contáctenos</a></li>
+                    <div >
+                        <ul id="nav" class="menu">
+                            <li class="events">Eventos</li>
+                            <li class="news">Noticias</li>
+                            <li class="interest">Interés</li>
+                            <li class="comming-soon">Próximos Estrenos</li>
+                            <li class="contact">Contáctenos</li>
                         </ul>
                     </div>
-                    <div id="ic-toggle"></div>
+                    <div id="ic-toggle">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
                 </div>
             </nav>
 
-            <div id="background"></div> <!--This div displays a background when a submenu appears -->
+            <div id="background"></div>
 
             <div id="index">
                 <div class="main-slide">
@@ -60,7 +62,7 @@
                 </div>
 
                 <main>
-                    <section class="events background-image">
+                    <section class="background-image events-content">
                         <div class="container">
                             <h2>Eventos</h2>
 
@@ -76,15 +78,15 @@
                         </div>
                     </section>
 
-                    <section class="news">
+                    <section class="news-content">
                         <div class="container">
                             <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                            <h2>Noticias</h2>
+                            <h2 class="">Noticias</h2>
                             <div class="description"><p>La suscripción a nuestros canales digitales te proporcionará información en tiempo real como precios del mercado, datos económicos y precio de venta del café.</p></div>
                         </div>
                     </section>
 
-                    <section class="interest background-image">
+                    <section class="background-image interest-content">
                         <div class="container">
                             <h2>Interés</h2>
 
@@ -92,7 +94,7 @@
                         </div>
                     </section>
                     
-                    <section class="comming-soon">
+                    <section class="comming-soon-content fade-in-element hidden">
                         <div class="container">
                             <h2>Próximos Estrenos</h2>
 
@@ -147,7 +149,7 @@
                         </div>
                     </section>    
 
-                    <section class="contacto background-image">
+                    <section class="contact-content background-image">
                         <div class="container">
                             <h2>Contacto</h2>
 
@@ -157,8 +159,7 @@
                             </p>
                         </div>
                     </section>
-                </main>
-                    
+                </main>                    
             </div>
         </div>
     </body>
